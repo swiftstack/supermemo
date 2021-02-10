@@ -15,9 +15,10 @@ let package = Package(
         .target(
             name: "SuperMemo",
             dependencies: []),
-        .testTarget(
-            name: "SuperMemoTests",
-            dependencies: ["SuperMemo", "Test"]),
+        .executableTarget(
+            name: "Tests/Supermemo",
+            dependencies: ["SuperMemo", "Test"],
+            path: "Tests/Supermemo"),
     ]
 )
 

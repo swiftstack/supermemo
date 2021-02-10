@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+
+swift build
+
+export DYLD_LIBRARY_PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/lib/swift/macosx
+
+.build/debug/Tests/SuperMemo

@@ -1,7 +1,8 @@
 import Test
+
 @testable import SuperMemo
 
-func testEasinessFactor() {
+test.case("EasinessFactor") {
     let factor = SuperMemo2.EasinessFactor(1.5)
     expect(factor.value == 1.5)
 
@@ -12,7 +13,7 @@ func testEasinessFactor() {
     expect(max.value == 2.5)
 }
 
-func testRepetition() {
+test.case("Repetition") {
     var repetition = SuperMemo2.Repetition.initial
     expect(repetition.number == 0)
     expect(repetition.interval == 0)
@@ -33,7 +34,7 @@ func testRepetition() {
     expect(repetition.interval == 8)
 }
 
-func testItem() {
+test.case("Item") {
     var item = SuperMemo2.Item()
     var repetition = SuperMemo2.Repetition.initial
     expect(item.factor == 2.5)
