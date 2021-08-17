@@ -5,7 +5,7 @@ SuperMemo2 method implemented in Swift
 ## Package.swift
 
 ```swift
-.package(url: "https://github.com/swift-stack/supermemo.git", .branch("fiber"))
+.package(url: "https://github.com/swiftstack/supermemo.git", .branch("fiber"))
 ```
 
 ## Memo
