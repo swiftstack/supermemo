@@ -17,16 +17,27 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "SuperMemo"),
+            name: "SuperMemo",
+            swiftSettings: swift6),
         .executableTarget(
             name: "Tests/Supermemo",
             dependencies: [
                 .target(name: "SuperMemo"),
                 .product(name: "Test", package: "test"),
             ],
-            path: "Tests/Supermemo"),
+            path: "Tests/Supermemo",
+            swiftSettings: swift6),
     ]
 )
+
+let swift6: [SwiftSetting] = [
+    .enableUpcomingFeature("ConciseMagicFile"),
+    .enableUpcomingFeature("ForwardTrailingClosures"),
+    .enableUpcomingFeature("ExistentialAny"),
+    .enableUpcomingFeature("StrictConcurrency"),
+    .enableUpcomingFeature("ImplicitOpenExistentials"),
+    .enableUpcomingFeature("BareSlashRegexLiterals"),
+]
 
 // MARK: - custom package source
 
