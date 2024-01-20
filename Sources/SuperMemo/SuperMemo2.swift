@@ -7,8 +7,8 @@ public enum SuperMemo2 {
 
         public init(
             factor: EasinessFactor = 2.5,
-            repetition: Repetition = .initial)
-        {
+            repetition: Repetition = .initial
+        ) {
             self.factor = factor
             self.repetition = repetition
         }
@@ -126,6 +126,6 @@ extension SuperMemo2.EasinessFactor
 // MARK: clamp
 
 @inline(__always)
-func clamp<T : Comparable>(_ value: T, _ lower: T, _ upper: T) -> T {
+func clamp<T: Comparable>(_ value: T, _ lower: T, _ upper: T) -> T {
     return max(lower, min(value, upper))
 }
