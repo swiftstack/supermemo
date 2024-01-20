@@ -17,11 +17,13 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "SuperMemo",
-            dependencies: []),
+            name: "SuperMemo"),
         .executableTarget(
             name: "Tests/Supermemo",
-            dependencies: ["SuperMemo", "Test"],
+            dependencies: [
+                .target(name: "SuperMemo"),
+                .product(name: "Test", package: "test"),
+            ],
             path: "Tests/Supermemo"),
     ]
 )
@@ -68,6 +70,6 @@ extension Package.Dependency {
     static func package(name: String, source: Source) -> Package.Dependency {
         return source == .local
             ? .package(name: name, path: source.url(for: name))
-            : .package(name: name, url: source.url(for: name), .branch("dev"))
+            : .package(url: source.url(for: name), branch: "dev")
     }
 }
